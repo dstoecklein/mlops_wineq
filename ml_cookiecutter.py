@@ -11,7 +11,6 @@ def create_folders():
         "reports",
         "saved_models",
         "src",
-        "tests",
         os.path.join("webapp", "static"),
         os.path.join("webapp", "templates")
     ]
@@ -26,6 +25,7 @@ def create_files():
         "dvc.yaml",
         "params.yaml",
         "requirements.txt",
+        "test.txt",
         os.path.join("prediction_service", "__init__.py"),
         os.path.join("src", "__init__.py"),
         os.path.join("tests", "__init__.py")
