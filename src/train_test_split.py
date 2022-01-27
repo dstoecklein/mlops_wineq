@@ -10,7 +10,7 @@ def split_and_save(config_path) -> None:
     train_path = config["data"]["processed"]["train"]
     test_path = config["data"]["processed"]["test"]
     split_ratio = config["data"]["processed"]["split_ratio"]
-    random_state = config["base"]["processed"]["random_state"]
+    random_state = config["data"]["processed"]["random_state"]
 
     # read raw data
     df = pd.read_csv(raw_path, sep=",", encoding="utf8")
