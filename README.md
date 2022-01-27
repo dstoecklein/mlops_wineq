@@ -1,4 +1,4 @@
-# mlops
+# MLOps
 Simple ML application to practice MLOps
 
 ## 1. setting up the environment
@@ -45,3 +45,12 @@ Simple ML application to practice MLOps
 - Evaluation
 - Save metrics (as json) and model itself (as joblib)
 - ``dvc metrics show`` shows the metrics as defined in dvc.yaml
+- ``dvc metrics diff`` shows difference of previous experiments. ``HEAD`` is the previous experiment, ``workspace`` the current
+
+| Path | Metric | HEAD | workspace |Change |
+|-|-|-|-|-|
+|reports\metrics.json | mae      |   0.65656 | 0.64716  | -0.00939 |
+|reports\metrics.json | r2       |   0.01971 | 0.03934  |  0.01962 |
+|reports\metrics.json | rmse     |   0.78837 | 0.78044  | -0.00793 |
+|reports\params.json  | alpha    |   0.88    | 0.5      | -0.38 |
+|reports\params.json  | l1_ratio |   0.89    | 0.68     | -0.21 |
