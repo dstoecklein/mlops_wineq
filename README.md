@@ -21,5 +21,8 @@ Simple ML application to practice MLOps
 - ``git checkout HEAD^1 .\data.dvc`` checkout to previous commited version of dvc
 - ``dvc checkout``
 
-## 3. setting up parameter config
-- ``params.yaml`` holds information about the project and model params
+## 3. setting up params.yaml config
+- ``params.yaml`` holds information about the paths and model params
+
+## 4. setting up dvc.yaml config
+- ``dvc.yaml`` holds information about the stages which need to be tracked in order to reproduce them
