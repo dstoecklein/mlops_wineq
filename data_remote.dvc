@@ -1,5 +1,5 @@
 outs:
-- md5: 3531b95ae20a0335c46fd9d8d2de12a9.dir
-  size: 187196
-  nfiles: 2
+- md5: 74bbd9cefe3d194f3cdce98a22eb34c2.dir
+  size: 93598
+  nfiles: 1
   path: data_remote
