@@ -18,10 +18,9 @@ models:
     params:
       alpha: 0.88
       l1_ratio: 0.89
-  
+
 model_dir: saved_models
 
 reports:
+  metrics: reports/metrics.json
   params: reports/params.json
-  scores: reports/scores.json
-

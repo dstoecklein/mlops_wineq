@@ -6,13 +6,14 @@ import joblib
 import json
 from read_config import read_config_file
 
+
 def save_metrics(config_path, y, y_hat) -> None:
     """evaluate & save the metrics of trained model"""
 
     config = read_config_file(config_path)
 
     params_file = config["reports"]["params"]
-    scores_file = config["reports"]["scores"]
+    metrics_file = config["reports"]["metrics"]
 
     alpha = config["models"]["ElasticNet"]["params"]["alpha"]
     l1_ratio = config["models"]["ElasticNet"]["params"]["l1_ratio"]
@@ -21,13 +22,13 @@ def save_metrics(config_path, y, y_hat) -> None:
     mae = mean_absolute_error(y, y_hat)
     r2 = r2_score(y, y_hat)
 
-    with open(scores_file, "w") as f:
-        scores = {
+    with open(metrics_file, "w") as f:
+        metrics = {
             "rmse": rmse,
             "mae": mae,
             "r2": r2
         }
-        json.dump(scores, f, indent=4)
+        json.dump(metrics, f, indent=4)
 
     with open(params_file, "w") as f:
         params = {
@@ -37,6 +38,7 @@ def save_metrics(config_path, y, y_hat) -> None:
         json.dump(params, f, indent=4)
 
     return rmse, mae, r2
+
 
 def save_model(config_path, model) -> None:
     """save model as joblibe"""
