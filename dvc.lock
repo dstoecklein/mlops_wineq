@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python src/get_raw_data.py --config=config.yaml
+    deps:
+    - path: data_remote/winequality.csv
+      md5: 048d89c4840fc802a1570285933aae22
+      size: 93598
+    - path: src/get_raw_data.py
+      md5: 7407b716fa655190bc5050b09ee6e47b
+      size: 677
+    - path: src/get_remote_data.py
+      md5: a75fc22be6636d5da52f040f984aa1c5
+      size: 565
+    outs:
+    - path: data/raw/winequality.csv
+      md5: d98e8f2eca228c11c4de1cc96866a54d
+      size: 93598

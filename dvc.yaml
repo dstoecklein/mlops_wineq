@@ -1,4 +1,6 @@
 stages:
+  # stage 1: get remote data and save it in data/raw
+  # check dependencies - these files need to be present
   get_data:
     cmd: python src/get_raw_data.py --config=config.yaml
     deps:

@@ -26,3 +26,4 @@ Simple ML application to practice MLOps
 
 ## 4. setting up dvc.yaml config
 - ``dvc.yaml`` holds information about the stages which need to be tracked in order to reproduce them
+- ``dvc repro`` to run all stages. It will create a ``dvc.lock`` file - it will track the defined dependencies on which the stage depend on. If ``dvc repro`` ran again, it will recognize that there are no changes.
