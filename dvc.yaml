@@ -1,0 +1,9 @@
+stages:
+  get_data:
+    cmd: python src/get_raw_data.py --config=config.yaml
+    deps:
+    - src/get_remote_data.py
+    - src/get_raw_data.py
+    - data_remote/winequality.csv
+    outs:
+    - data/raw/winequality.csv
