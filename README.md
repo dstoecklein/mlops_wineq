@@ -16,3 +16,6 @@ Simple ML application to practice MLOps
 - ``dvc push`` pushes all tracked local files to remote storage
 - ``dvc pull`` pulls the remote stored files
 - ``dvc repro`` reproduces all stages defined in ``dvc.yaml``
+
+## 3. setting up parameter config
+- ``params.yaml`` holds information about the project and model params

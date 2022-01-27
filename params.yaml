@@ -1,0 +1,8 @@
+base:
+  project: mlops_wine
+  random_state: 42
+  target_col: TARGET
+
+data_source:
+  dir: data/winequality/raw/winequality.csv
+
