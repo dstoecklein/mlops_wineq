@@ -1,7 +1,5 @@
 base:
   project: mlops_wine
-  random_state: 42
-  target_col: TARGET
 
 data_remote:
   gdrive: data_remote/winequality.csv
@@ -12,6 +10,8 @@ data:
     train: data/processed/train_winequality.csv
     test: data/processed/test_winequality.csv
     split_ratio: 0.3
+    random_state: 42 # Controls the shuffling applied to the data before applying the split
+    target_col: TARGET # label
 
 models:
   ElasticNet:
