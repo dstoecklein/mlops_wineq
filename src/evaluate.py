@@ -37,8 +37,6 @@ def save_metrics(config_path, y, y_hat) -> None:
         }
         json.dump(params, f, indent=4)
 
-    return rmse, mae, r2
-
 
 def save_model(config_path, model) -> None:
     """save model as joblibe"""

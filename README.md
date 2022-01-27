@@ -27,3 +27,21 @@ Simple ML application to practice MLOps
 ## 4. setting up dvc.yaml config
 - ``dvc.yaml`` holds information about the stages which need to be tracked in order to reproduce them
 - ``dvc repro`` to run all stages. It will create a ``dvc.lock`` file - it will track the defined dependencies on which the stage depend on. If ``dvc repro`` ran again, it will recognize that there are no changes.
+- ``dvc metrics show`` shows the metrics stored in files as defined in ``dvc.yaml``
+- ``dvc metric diff`` shows different from the past experiments
+- ``dvc params diff`` shows the different parameters used and tracked by dvc defined in ``dvc.yaml``
+
+
+# Stage 1
+- Retrieving data from remote storage, which is dvc tracked
+- Load data into data/raw
+
+# Stage 2
+- Train, test split from data/raw
+- save splitted data in data/processed
+
+# Stage 3
+- Model training
+- Evaluation
+- Save metrics (as json) and model itself (as joblib)
+- ``dvc metrics show`` shows the metrics as defined in dvc.yaml

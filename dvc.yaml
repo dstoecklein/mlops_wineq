@@ -30,7 +30,7 @@ stages:
       - config.yaml: # default would be params.yaml
         - models.ElasticNet.params.alpha
         - models.ElasticNet.params.l1_ratio
-    metrics:
+    metrics: # will be shown with command dvc metrics show
       - reports/metrics.json:
           cache: false # dvc cache
       - reports/params.json:
