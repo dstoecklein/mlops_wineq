@@ -40,6 +40,7 @@ Simple ML application to practice MLOps
 - - ``def test_XXX`` is the name convention
 - ``tox`` command will run the defined testenv and its commands (for example ``pytest -v``).
 - ``tox -r`` will rebuild the virtual environment
+- create custom ``exceptions`` if needed
 
 
 ## 6. setting up setup file
