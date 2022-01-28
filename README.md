@@ -57,7 +57,8 @@ Simple ML application to practice MLOps
 ## 8. setting up linting
 - checks if python files follows style and naming convention
 - mention ``flake8 . --count --selectE9, F63, F7, F82 --show-source --statistics`` and ``flake8 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`` in ``tox.ini``
-  
+
+## 9. setting up prediction service
 
 # DVC stages:
 
