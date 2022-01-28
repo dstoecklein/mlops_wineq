@@ -39,11 +39,13 @@ Simple ML application to practice MLOps
 - ``test_config.py`` holds the acutal tests
 - - ``def test_XXX`` is the name convention
 - ``tox`` command will run the defined testenv and its commands (for example ``pytest -v``).
+- ``tox -r`` will rebuild the virtual environment
 
 
 ## 6. setting up setup file
 - ``setup.py`` makes the project a package
 - ``pip install -e .`` installs local package (own defined project)
+- - ``-e .`` can also be mentioned in ``requirements.txt``
 - ``pip freeze`` will now show own project in installed packages
 - ``import <PROJECT>`` can now import the project in any other project
 
