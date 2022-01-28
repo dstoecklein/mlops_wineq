@@ -24,6 +24,7 @@ models:
       #l1_ratio: 0.68
 
 model_dir: saved_models
+webapp_model_dir: prediction_service/model/model.joblib
 
 reports:
   metrics: reports/metrics.json

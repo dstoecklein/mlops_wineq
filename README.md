@@ -1,6 +1,8 @@
 # MLOps
 Simple ML application to practice MLOps
 
+# Development
+
 ## 1. setting up the environment
 - ``create remote repository``
 - ``clone remote repository``
@@ -59,6 +61,12 @@ Simple ML application to practice MLOps
 - mention ``flake8 . --count --selectE9, F63, F7, F82 --show-source --statistics`` and ``flake8 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`` in ``tox.ini``
 
 ## 9. setting up prediction service
+- create a simple web frontend using ``flask``
+- ``app.py`` hold flask application
+- ``model.joblib`` has to have the saved model to use
+- TODO SAVE MODEL IN PREDICTION SERVICE
+
+# Deployment
 
 # DVC stages:
 

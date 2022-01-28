@@ -39,7 +39,7 @@ def save_metrics(config_path, y, y_hat) -> None:
 
 
 def save_model(config_path, model) -> None:
-    """save model as joblibe"""
+    """save model as joblib"""
     config = read_config_file(config_path)
     model_dir = config["model_dir"]
     os.makedirs(model_dir, exist_ok=True)
