@@ -71,9 +71,14 @@ Simple ML application to practice MLOps
 ## 1. create ci/cd workflow (Github actions)
 - create ``.github/workflows/`` folder
 - create ``ci-cd.yaml`` file
+- Reminder: Now we can use ``tox`` in development for testing and production testing will be done by github actions
 
 ## 2. deployment to Heroku
-- ...
+- Create heroku app and link to github repo
+- Go to Github ``secrets`` and add ``HEROKU_API_NAME`` and ``HEROKU_API_TOKEN``
+- Create ``Procfile``: Heroku will search for this file and run app 
+- - specify which server and which app it needs to run
+
 
 # DVC stages:
 
@@ -117,3 +122,4 @@ Simple ML application to practice MLOps
 - Feature selection
 - Containerizing (Docker)
 - Monitoring / Drifts
+- Automated retraining (Continuous training)
