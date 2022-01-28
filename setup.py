@@ -6,5 +6,5 @@ setup(
     description="simple mlops app",
     author="dstoecklein",
     packages=find_packages(),
-    license="LICENSE.txt" 
+    license="LICENSE.txt"
 )

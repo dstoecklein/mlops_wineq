@@ -40,7 +40,7 @@ Simple ML application to practice MLOps
 - - ``def test_XXX`` is the name convention
 - ``tox`` command will run the defined testenv and its commands (for example ``pytest -v``).
 - ``tox -r`` will rebuild the virtual environment
-- create custom ``exceptions`` if needed
+- create custom ``exceptions`` if needed (see 7)
 
 
 ## 6. setting up setup file
@@ -53,7 +53,12 @@ Simple ML application to practice MLOps
 ## 7. setting up schema & exceptions
 - In notebooks, create a schema for ``min-max`` values. This will be important for the frontend. Preferably as json
 - Create custom ``Exceptions`` for frontend
+
+## 8. setting up linting
+- checks if python files follows style and naming convention
+- mention ``flake8 . --count --selectE9, F63, F7, F82 --show-source --statistics`` and ``flake8 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`` in ``tox.ini``
   
+
 # DVC stages:
 
 ## Stage 1

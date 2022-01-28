@@ -1,5 +1,6 @@
 import os
 
+
 def create_folders():
     folders = [
         "artifacts",
@@ -20,6 +21,7 @@ def create_folders():
         with open(os.path.join(folder, ".gitkeep"), "w") as f:
             pass
 
+
 def create_files():
     files = [
         "dvc.yaml",
@@ -35,6 +37,7 @@ def create_files():
         with open(file, "w") as f:
             pass
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     create_folders()
     create_files()
