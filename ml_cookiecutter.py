@@ -3,6 +3,7 @@ import os
 
 def create_folders():
     folders = [
+        os.path.join(".github", "workflows"),
         "artifacts",
         os.path.join("data", "raw"),
         os.path.join("data", "processed"),
@@ -41,7 +42,8 @@ def create_files():
         os.path.join("webapp", "static", "css", "main.css"),
         os.path.join("webapp", "templates", "index.html"),
         os.path.join("webapp", "templates", "404.html"),
-        os.path.join("webapp", "templates", "base.html")
+        os.path.join("webapp", "templates", "base.html"),
+        os.path.join(".github", "workflows", "ci-cd.yaml")
     ]
 
     for file in files:
