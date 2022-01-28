@@ -68,6 +68,13 @@ Simple ML application to practice MLOps
 
 # Deployment
 
+## 1. create ci/cd workflow (Github actions)
+- create ``.github/workflows/`` folder
+- create ``ci-cd.yaml`` file
+
+## 2. deployment to Heroku
+- ...
+
 # DVC stages:
 
 ## Stage 1
