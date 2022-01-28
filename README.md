@@ -49,6 +49,10 @@ Simple ML application to practice MLOps
 - ``pip freeze`` will now show own project in installed packages
 - ``import <PROJECT>`` can now import the project in any other project
 
+## 7. setting up schema & exceptions
+- In notebooks, create a schema for ``min-max`` values. This will be important for the frontend. Preferably as json
+- Create custom ``Exceptions`` for frontend
+  
 # DVC stages:
 
 ## Stage 1
@@ -76,5 +80,18 @@ Simple ML application to practice MLOps
 
 
 # What is covered?
+- Simple feature engineering
 - Load remote data
 - Track changes on data, model (dvc) and code (git)
+- Model training and evaluation
+- Save models and metrics
+- Testing (flake8, pytest, tox)
+- CI/CD (Github actions)
+- Deployment (Heroku)
+- Advanced tracking (MLFlow)
+
+# What is not covered?
+- Data analysis
+- Feature selection
+- Containerizing (Docker)
+- Monitoring / Drifts
