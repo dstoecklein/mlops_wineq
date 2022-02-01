@@ -1,11 +1,9 @@
-from sqlalchemy import asc
 from src.read_config import read_config_file
 import argparse
 import mlflow
 from mlflow.tracking import MlflowClient
 from pprint import pprint
 import joblib
-import os
 
 def log_production_model(config_path):
     config = read_config_file(config_path)

@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.linear_model import ElasticNet
 from read_config import read_config_file
 import argparse
-from evaluate import calc_metrics, save_model
+from evaluate import calc_metrics
 import mlflow
 from urllib.parse import urlparse
 
