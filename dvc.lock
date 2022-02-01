@@ -49,5 +49,5 @@ stages:
       size: 2465
     params:
       config.yaml:
-        models.ElasticNet.params.alpha: 0.88
-        models.ElasticNet.params.l1_ratio: 0.89
+        models.ElasticNet.params.alpha: 0.5
+        models.ElasticNet.params.l1_ratio: 0.68

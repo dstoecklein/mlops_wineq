@@ -76,6 +76,7 @@ Simple ML application to practice MLOps
 - Server commands: ``mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 1234``
 - run ``dvc repro`` to create experiment
 - Make changes to ``config.yaml`` to run more experiments
+- For each ran experiment, it will create an unique run-id in ``artifacts`` folder. It will store the model as .pkl format, the entire environment as .yaml and the requirements.txt file.
 
 # Deployment
 
