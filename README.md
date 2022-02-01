@@ -65,6 +65,7 @@ Simple ML application to practice MLOps
 - ``app.py`` hold flask application
 - ``model.joblib`` has to have the saved model to use
 - TODO SAVE MODEL IN PREDICTION SERVICE
+- Has the prediction functions and input validation
 
 # Deployment
 
@@ -114,7 +115,7 @@ Simple ML application to practice MLOps
 - Save models and metrics
 - Testing (flake8, pytest, tox)
 - CI/CD (Github actions)
-- Deployment (Heroku)
+- Deployment (Heroku) 
 - Advanced tracking (MLFlow)
 
 # What is not covered?

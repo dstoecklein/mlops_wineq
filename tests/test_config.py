@@ -2,10 +2,7 @@
 import pytest
 
 
-class OutOfRange(Exception):
-    def __init__(self, msg="Input value out of range") -> None:
-        self.msg = msg
-        super().__init__(self.msg)
+
 
 
 def test_generic():
