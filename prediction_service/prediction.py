@@ -4,7 +4,7 @@ import numpy as np
 from src.read_config import read_config_file, read_schema_file
 
 config_file = "config.yaml"
-schema_file = os.path.join("prediction_service", "schema_in.json")
+schema_file = os.path.join("prediction_service", "schema_input.json")
 
 class OutOfRange(Exception):
     def __init__(self, msg="Input value out of range") -> None:
@@ -30,7 +30,7 @@ def predict(data):
     except OutOfRange:
         return "Unexpected result"
 
-def validate_input(request):
+def validate_input(request) -> bool:
     def _validate_cols(col):
         schema = read_schema_file(schema_file)
         true_cols = schema.keys()
