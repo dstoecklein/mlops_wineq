@@ -78,6 +78,9 @@ Simple ML application to practice MLOps
 - Make changes to ``config.yaml`` to run more experiments
 - For each ran experiment, it will create an unique run-id in ``artifacts`` folder. It will store the model as .pkl format, the entire environment as .yaml and the requirements.txt file.
 
+## 11. deploy model that performs best in production (MLFlow stages)
+- created ``log_production_model.py``
+
 # Deployment
 
 ## 1. create ci/cd workflow (Github actions)
