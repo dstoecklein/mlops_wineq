@@ -2,8 +2,9 @@ import pandas as pd
 from sklearn.linear_model import ElasticNet
 from read_config import read_config_file
 import argparse
-from evaluate import save_metrics, save_model
-
+from evaluate import calc_metrics, save_model
+import mlflow
+from urllib.parse import urlparse
 
 def train(config_path) -> None:
     """load the train & test files and train model"""
@@ -25,15 +26,38 @@ def train(config_path) -> None:
     train_y = train_data[label]
     test_y = test_data[label]
 
-    model = ElasticNet(alpha=alpha, l1_ratio=l1_ratio,
-                       random_state=random_state)
-    model.fit(train_X, train_y)
+    #====MLFLOW====#
+    mlflow_config = config["mlflow"]
+    remote_server_uri = mlflow_config["remote_server_uri"]
+    mlflow.set_tracking_uri(remote_server_uri)
+    mlflow.set_experiment(mlflow_config["experiment_name"])
 
-    y_hat = model.predict(test_X)
+    with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlflow_run:
+        model = ElasticNet(alpha=alpha, l1_ratio=l1_ratio,
+                        random_state=random_state)
+        model.fit(train_X, train_y)
 
-    # metrics & model save
-    save_metrics(config_path, y=test_y, y_hat=y_hat)
-    save_model(config_path, model=model)
+        y_hat = model.predict(test_X)
+
+        # calc metrics 
+        (rmse, mae, r2) = calc_metrics(y=test_y, y_hat=y_hat)
+
+        mlflow.log_param("alpha", alpha)
+        mlflow.log_param("l1_ratio", l1_ratio)
+        mlflow.log_metric("rmse", rmse)
+        mlflow.log_metric("mae", mae)
+        mlflow.log_metric("r2", r2)
+
+        tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
+
+        if tracking_url_type_store != "file": # if its not a file, store model to a db
+            mlflow.sklearn.log_model( # we have a sklearn model
+                model,
+                "model", 
+                registered_model_name=mlflow_config["registered_model_name"]
+                ) 
+        else:
+            mlflow.sklearn.load_model(model, "model")
 
 
 if __name__ == "__main__":

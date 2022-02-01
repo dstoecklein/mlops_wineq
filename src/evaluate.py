@@ -7,22 +7,23 @@ import json
 from read_config import read_config_file
 
 
-def save_metrics(config_path, y, y_hat) -> None:
+def calc_metrics(y, y_hat) -> list:
     """evaluate & save the metrics of trained model"""
 
-    config = read_config_file(config_path)
+    #config = read_config_file(config_path)
 
-    params_file = config["reports"]["params"]
-    metrics_file = config["reports"]["metrics"]
+    #params_file = config["reports"]["params"]
+    #metrics_file = config["reports"]["metrics"]
 
-    alpha = config["models"]["ElasticNet"]["params"]["alpha"]
-    l1_ratio = config["models"]["ElasticNet"]["params"]["l1_ratio"]
+    #alpha = config["models"]["ElasticNet"]["params"]["alpha"]
+    #l1_ratio = config["models"]["ElasticNet"]["params"]["l1_ratio"]
 
     rmse = np.sqrt(mean_squared_error(y, y_hat))
     mae = mean_absolute_error(y, y_hat)
     r2 = r2_score(y, y_hat)
-
-    with open(metrics_file, "w") as f:
+    
+    return rmse, mae, r2
+"""     with open(metrics_file, "w") as f:
         metrics = {
             "rmse": rmse,
             "mae": mae,
@@ -35,7 +36,7 @@ def save_metrics(config_path, y, y_hat) -> None:
             "alpha": alpha,
             "l1_ratio": l1_ratio
         }
-        json.dump(params, f, indent=4)
+        json.dump(params, f, indent=4) """
 
 
 def save_model(config_path, model) -> None:

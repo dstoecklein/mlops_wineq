@@ -30,10 +30,16 @@ stages:
       - config.yaml: # default would be params.yaml
         - models.ElasticNet.params.alpha
         - models.ElasticNet.params.l1_ratio
-    metrics: # will be shown with command dvc metrics show
-      - reports/metrics.json:
-          cache: false # dvc cache
-      - reports/params.json:
-          cache: false
-    outs:
-      - saved_models/model.joblib
+    #metrics: # will be shown with command dvc metrics show
+    #  - reports/metrics.json:
+    #      cache: false # dvc cache
+    #  - reports/params.json:
+    #      cache: false
+    #outs:
+    #  - saved_models/model.joblib
+    
+  #log_production_model:
+  #  cmd: python src/log_production_model.py --config=config.yaml
+  #  deps:
+  #  - src/log_production_model.py
+

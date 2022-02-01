@@ -67,6 +67,16 @@ Simple ML application to practice MLOps
 - TODO SAVE MODEL IN PREDICTION SERVICE
 - Has the prediction functions and input validation
 
+## 10. setting up MLFlow
+- Tracking & Registry
+- Removed ``metrics`` and ``out`` from ``dvc.yaml``
+- Added ``log_production`` stage to ``dvc.yaml``
+- Added ``mlflow`` config to ``config.yaml``
+- Create ``artifacts`` folder
+- Server commands: ``mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 1234``
+- run ``dvc repro`` to create experiment
+- Make changes to ``config.yaml`` to run more experiments
+
 # Deployment
 
 ## 1. create ci/cd workflow (Github actions)
@@ -80,6 +90,7 @@ Simple ML application to practice MLOps
 - Create ``Procfile``: Heroku will search for this file and run app 
 - - specify which server and which app it needs to run
 
+## 3. MLFlow
 
 # DVC stages:
 
