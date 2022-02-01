@@ -64,7 +64,6 @@ Simple ML application to practice MLOps
 - create a simple web frontend using ``flask``
 - ``app.py`` hold flask application
 - ``model.joblib`` has to have the saved model to use
-- TODO SAVE MODEL IN PREDICTION SERVICE
 - Has the prediction functions and input validation
 
 ## 10. setting up MLFlow
