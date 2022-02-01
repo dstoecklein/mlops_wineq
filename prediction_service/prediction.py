@@ -49,10 +49,14 @@ def validate_input(request) -> bool:
     return True
     
 def form_response(request):
-    if validate_input(request):
-        data = request.values()
-        data = [list(map(float, data))]
-        response = predict(data)
+    try:
+        if validate_input(request):
+            data = request.values()
+            data = [list(map(float, data))]
+            response = predict(data)
+            return response
+    except Exception as e:
+        response = {"expected_range": read_schema_file(schema_file), "response": str(e)}
         return response
 
 def api_response(request) -> dict:
@@ -63,5 +67,5 @@ def api_response(request) -> dict:
             response = {"response": response} # convert it as dict
             return response
     except Exception as e:
-        response = {"the_expected_rage": read_schema_file(schema_file), "response": str(e)}
+        response = {"expected_range": read_schema_file(schema_file), "response": str(e)}
         return response

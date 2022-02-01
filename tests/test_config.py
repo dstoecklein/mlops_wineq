@@ -1,6 +1,5 @@
 import pytest
-from prediction_service.prediction import form_response, api_response
-import prediction_service
+from prediction_service.prediction import form_response, api_response, OutOfRange, NotInColumn
 
 input_data = {
     "incorrect_range": 
@@ -60,3 +59,16 @@ def test_form_response_correct_range(data=input_data["correct_range"]):
 def test_api_response_correct_range(data=input_data["correct_range"]):
     response = api_response(data)
     assert TARGET_range["min"] <= response["response"] <= TARGET_range["max"]
+
+#def test_form_response_incorrect_range(data=input_data["incorrect_range"]):
+#    print(data)
+#    with pytest.raises(OutOfRange):
+#        response = form_response(data)
+
+def test_api_response_incorrect_range(data=input_data["incorrect_range"]):
+    response = api_response(data)
+    assert response["response"] == OutOfRange().msg
+
+def test_api_response_incorrect_column(data=input_data["incorrect_col"]):
+    response = api_response(data)
+    assert response["response"] == NotInColumn().msg
