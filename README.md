@@ -138,3 +138,4 @@ Simple ML application to practice MLOps
 - Containerizing (Docker)
 - Monitoring / Drifts
 - Automated retraining (Continuous training)
+- Deep Learning Model (huge input data like images)

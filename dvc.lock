@@ -4,7 +4,7 @@ stages:
     cmd: python src/get_raw_data.py --config=config.yaml
     deps:
     - path: data_remote/winequality.csv
-      md5: 048d89c4840fc802a1570285933aae22
+      md5: ef155cf6c115ec18a598dd9555479d8b
       size: 93598
     - path: src/get_raw_data.py
       md5: caf59244e7787fd471f11d7157da437c
@@ -49,8 +49,8 @@ stages:
       size: 2453
     params:
       config.yaml:
-        models.ElasticNet.params.alpha: 0.9
-        models.ElasticNet.params.l1_ratio: 0.9
+        models.ElasticNet.params.alpha: 0.95
+        models.ElasticNet.params.l1_ratio: 0.95
   log_production_model:
     cmd: python src/log_production_model.py --config=config.yaml
     deps:
