@@ -1,0 +1,21 @@
+package_name: random_forest_regressor
+pipeline_name: random_forest_regressor_pipeline
+pipeline_save_file: rfr_pipeline_out
+
+raw_data: winequality.csv
+processed_data: winequality_processed.csv
+
+# global parameters
+target: TARGET
+test_size: 0.3
+seed: 101
+
+# model parameters
+n_estimators: 330
+
+# features
+features:
+  - alcohol
+  - sulphates
+  - citric_acid
+  - volatile_acidity
