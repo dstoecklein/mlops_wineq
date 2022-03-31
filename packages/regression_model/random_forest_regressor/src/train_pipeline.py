@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from random_forest_regressor.config.core import config
-from random_forest_regressor.pipeline import pipeline
+from random_forest_regressor.src.pipeline import pipeline
 from random_forest_regressor.src.data_manager import load_data
 
 def fit() -> None:

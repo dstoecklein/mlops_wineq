@@ -1,0 +1,5 @@
+stages:
+  train:
+    cmd: python packages/regression_model/random_forest_regressor/src/train_pipeline.py
+    deps: 
+      - packages/regression_model/random_forest_regressor/src/train_pipeline.py
