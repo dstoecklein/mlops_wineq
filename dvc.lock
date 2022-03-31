@@ -1,0 +1,8 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python packages/regression_model/random_forest_regressor/src/train_pipeline.py
+    deps:
+    - path: packages/regression_model/random_forest_regressor/src/train_pipeline.py
+      md5: 11bd5e13e2a0dbb4cecd6c86194b4ec0
+      size: 604
