@@ -1,5 +1,26 @@
 stages:
+  #get_data:
+  #  cmd: python packages/regression_model/random_forest_regressor/src/data_manager.py
+  #  deps:
+  #    - packages/regression_model/random_forest_regressor/src/data_manager.py
+  #    - packages/regression_model/random_forest_regressor/config/core.py
+  #    - packages/regression_model/random_forest_regressor/data
+  #  outs:
+  #    - packages/regression_model/random_forest_regressor/data/winequality.csv 
   train:
     cmd: python packages/regression_model/random_forest_regressor/src/train_pipeline.py
     deps: 
+      - packages/regression_model/random_forest_regressor/src/pipeline.py
       - packages/regression_model/random_forest_regressor/src/train_pipeline.py
+      - packages/regression_model/random_forest_regressor/src/data_manager.py
+      - packages/regression_model/random_forest_regressor/config/core.py
+      - packages/regression_model/random_forest_regressor/config/config.yml
+      - packages/regression_model/random_forest_regressor/data/winequality.csv
+  predict:
+    cmd: python packages/regression_model/random_forest_regressor/src/predict.py
+    deps: 
+      - packages/regression_model/random_forest_regressor/src/data_manager.py
+      - packages/regression_model/random_forest_regressor/config/core.py
+      - packages/regression_model/random_forest_regressor/config/config.yml
+      - packages/regression_model/random_forest_regressor/artifacts
+  

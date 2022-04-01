@@ -3,7 +3,8 @@ pipeline_name: random_forest_regressor_pipeline
 pipeline_save_file: rfr_pipeline_out
 
 raw_data: winequality.csv
-processed_data: winequality_processed.csv
+train_data: train.csv
+test_data: test.csv
 
 # global parameters
 target: TARGET

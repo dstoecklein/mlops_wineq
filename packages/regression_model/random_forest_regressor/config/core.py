@@ -6,9 +6,9 @@ import os
 
 PWD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(PWD, ".."))
-print(PWD, ROOT)
 DATA_PATH = os.path.join(ROOT, "data")
 CONFIG_PATH = os.path.join(ROOT, "config")
+ARTIFACTS_PATH = os.path.join(ROOT, "artifacts")
 CONFIG_FILE = os.path.join(CONFIG_PATH, "config.yml")
 
 class AppConfig(BaseModel):
@@ -16,7 +16,8 @@ class AppConfig(BaseModel):
     pipeline_name: str
     pipeline_save_file: str
     raw_data: str
-    processed_data: str
+    train_data: str
+    test_data: str
 
 class ModelConfig(BaseModel):
     target: str
@@ -31,10 +32,6 @@ class MasterConfig(BaseModel):
 
 def get_config_path() -> Path:
     return CONFIG_FILE
-    #if CONFIG_FILE.is_file():
-    #    return CONFIG_FILE
-    #else:
-    #    raise Exception(f"Invalid path or file {CONFIG_FILE}")
 
 def read_config_file(config_path: Path = None) -> YAML:
     if not config_path:
