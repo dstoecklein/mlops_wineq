@@ -8,19 +8,19 @@ stages:
   #  outs:
   #    - packages/regression_model/random_forest_regressor/data/winequality.csv 
   train:
-    cmd: python packages/regression_model/random_forest_regressor/src/train_pipeline.py
+    cmd: python packages/random_forest_regressor/model/src/train_pipeline.py
     deps: 
-      - packages/regression_model/random_forest_regressor/src/pipeline.py
-      - packages/regression_model/random_forest_regressor/src/train_pipeline.py
-      - packages/regression_model/random_forest_regressor/src/data_manager.py
-      - packages/regression_model/random_forest_regressor/config/core.py
-      - packages/regression_model/random_forest_regressor/config/config.yml
-      - packages/regression_model/random_forest_regressor/data/winequality.csv
+      - packages/random_forest_regressor/model/src/pipeline.py
+      - packages/random_forest_regressor/model/src/train_pipeline.py
+      - packages/random_forest_regressor/model/src/data_manager.py
+      - packages/random_forest_regressor/model/config/core.py
+      - packages/random_forest_regressor/model/config/config.yml
+      - packages/random_forest_regressor/model/data/winequality.csv
   predict:
-    cmd: python packages/regression_model/random_forest_regressor/src/predict.py
+    cmd: python packages/random_forest_regressor/model/src/predict.py
     deps: 
-      - packages/regression_model/random_forest_regressor/src/data_manager.py
-      - packages/regression_model/random_forest_regressor/config/core.py
-      - packages/regression_model/random_forest_regressor/config/config.yml
-      - packages/regression_model/random_forest_regressor/artifacts
+      - packages/random_forest_regressor/model/src/data_manager.py
+      - packages/random_forest_regressor/model/config/core.py
+      - packages/random_forest_regressor/model/config/config.yml
+      - packages/random_forest_regressor/model/artifacts
   

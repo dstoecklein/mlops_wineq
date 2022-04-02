@@ -1,0 +1,16 @@
+include *.txt
+include *.md
+include *.cfg
+include *.pkl
+recursive-include ./random_forest_regressor/*
+
+include model/data/train.csv
+include model/data/test.csv
+include model/artifacts/*.pkl
+include model/VERSION
+
+include ./requirements.txt
+exclude *.log
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

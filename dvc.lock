@@ -1,25 +1,25 @@
 schema: '2.0'
 stages:
   train:
-    cmd: python packages/regression_model/random_forest_regressor/src/train_pipeline.py
+    cmd: python packages/random_forest_regressor/model/src/train_pipeline.py
     deps:
-    - path: packages/regression_model/random_forest_regressor/config/config.yml
+    - path: packages/random_forest_regressor/model/config/config.yml
       md5: 9aabeeebe4031ff2d37ad4e58db566e3
       size: 398
-    - path: packages/regression_model/random_forest_regressor/config/core.py
-      md5: afc2b7984dbe1f6570bdfad73812bb54
-      size: 1571
-    - path: packages/regression_model/random_forest_regressor/data/winequality.csv
+    - path: packages/random_forest_regressor/model/config/core.py
+      md5: 1575a25a2c4a4cd2c008b5bc937ce50e
+      size: 1561
+    - path: packages/random_forest_regressor/model/data/winequality.csv
       md5: ccc8d3507eb151f53f760d36abdef888
-      size: 91998
-    - path: packages/regression_model/random_forest_regressor/src/data_manager.py
-      md5: d47fde3912409ad702592b862490c657
-      size: 1814
-    - path: packages/regression_model/random_forest_regressor/src/pipeline.py
-      md5: a0aec10e5635f073046f4e5100f01deb
-      size: 483
-    - path: packages/regression_model/random_forest_regressor/src/train_pipeline.py
-      md5: 6068c9f3e3a167f25758e4773f1cf4af
-      size: 725
+      size: 93598
+    - path: packages/random_forest_regressor/model/src/data_manager.py
+      md5: f9572136964a09cd347359a9cb5687dd
+      size: 1827
+    - path: packages/random_forest_regressor/model/src/pipeline.py
+      md5: 1acaa9e3d84a169cae7e23310e7bd8e5
+      size: 531
+    - path: packages/random_forest_regressor/model/src/train_pipeline.py
+      md5: 03a6dbac3c3766df016c7b2adf184a31
+      size: 800
   predict:
-    cmd: python packages/regression_model/random_forest_regressor/src/predict.py
+    cmd: packages/random_forest_regressor/model/src/predict.py
